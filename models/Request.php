@@ -19,9 +19,16 @@ use Yii;
  */
 class Request extends \yii\db\ActiveRecord
 {
-    /**
-     * {@inheritdoc}
-     */
+    const TYPE_SERVICE = 1;
+    const TYPE_SUPPORT = 2;
+    const TYPE_INFO = 3;
+    
+	const PRIORITY_LOW = 1;
+	const PRIORITY_MIDDLE = 2;
+	const PRIORITY_HIGH = 3;
+	
+	
+	
     public static function tableName()
     {
         return 'requests';

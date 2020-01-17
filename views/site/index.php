@@ -32,19 +32,26 @@ use yii\bootstrap\ActiveForm;
         <div class="row">
             <div class="col-lg-12">
                
+            <?php $form = ActiveForm::begin(); ?>
 
-                <?php $form = ActiveForm::begin(); ?>
-
-        <?= $form->field($model, 'name') ?>
-        <?= $form->field($model, 'type') ?>
-        <?= $form->field($model, 'priority') ?>
-        <?= $form->field($model, 'description') ?>
-        <?= $form->field($model, 'client_email') ?>
+				<?= $form->field($model, 'name') ?>
+				<?= $form->field($model, 'type')->dropDownList([
+					'1' => 'Сервисное обслуживание',
+					'2' => 'Поддержка',
+					'3'=>'Запрос технической информации'
+				]); ?>
+				<?= $form->field($model, 'priority')->dropDownList([
+					'1' => 'Низкий',
+					'2' => 'Средний',
+					'3'=>'Высокий'
+				]); ?>
+				<?= $form->field($model, 'description') ?>
+				<?= $form->field($model, 'client_email') ?>
     
-        <div class="form-group">
-            <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
-        </div>
-    <?php ActiveForm::end(); ?>
+				<div class="form-group">
+					<?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
+				</div>
+            <?php ActiveForm::end(); ?>
 
             </div>
             
