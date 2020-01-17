@@ -1,0 +1,22 @@
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine on
+
+AddDefaultCharset utf-8
+
+RewriteCond %{HTTP_HOST} ^www.\.loc$ [NC]
+RewriteRule ^(.*)$ http://.loc/$1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} !^/(web)
+RewriteRule ^favicon.ico$ /web/favicon.ico$1 [L]  
+RewriteRule ^robots.txt$ /web/robots.txt$1 [L]      
+RewriteRule ^sitemap.xml$ /web/sitemap.xml$1 [L]
+
+RewriteCond %{REQUEST_URI} !^/(web)
+RewriteRule ^assets/(.*)$ /web/assets/$1 [L]
+RewriteRule ^css/(.*)$ web/css/$1 [L]
+RewriteRule (.*) /web/$1
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /web/index.php
