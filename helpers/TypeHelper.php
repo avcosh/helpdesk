@@ -2,7 +2,7 @@
 
 namespace app\helpers;
 
-use app\models\Request;
+use app\modules\admin\models\Request;
 use yii\helpers\ArrayHelper;
 
 class TypeHelper
@@ -19,6 +19,6 @@ class TypeHelper
 
     public static function getTypeName($type)
     {
-        return ArrayHelper::getValue(self::getTypeList(), $status);
+        return ArrayHelper::getValue(self::getTypeList(), $type);
     }
 } 

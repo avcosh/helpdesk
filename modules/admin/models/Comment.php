@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace app\modules\admin\models;
 
 use Yii;
 
@@ -45,9 +45,9 @@ class Comment extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'text' => 'Text',
-            'date' => 'Date',
-            'request_id' => 'Request ID',
+            'text' => 'Текст',
+            'date' => 'Дата',
+            'request_id' => 'Статья', // Здесь вывод названия статьи
         ];
     }
 

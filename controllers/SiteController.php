@@ -70,7 +70,7 @@ class SiteController extends Controller
 				return $this->refresh();
 			}
 			else{
-				Yii::$app->session->setFlash('error', 'Ошибка');
+				Yii::$app->session->setFlash('error', 'Такой email не зарегистрирован');
 			}
 		}
 		return $this->render('index', compact('model'));
@@ -89,7 +89,8 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            //return $this->goBack();
+			 return $this->redirect(['/admin/default']);
         }
 
         $model->password = '';

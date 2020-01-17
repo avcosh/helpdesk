@@ -1,7 +1,7 @@
 <?php
 
-namespace app\models;
-
+namespace app\modules\admin\models;
+use app\modules\admin\models\Comment;
 use Yii;
 
 /**
@@ -19,8 +19,18 @@ use Yii;
  */
 class Request extends \yii\db\ActiveRecord
 {
+    const TYPE_SERVICE = 1;
+    const TYPE_SUPPORT = 2;
+    const TYPE_INFO = 3;
     
-	public static function tableName()
+	const PRIORITY_LOW = 1;
+	const PRIORITY_MIDDLE = 2;
+	const PRIORITY_HIGH = 3;
+	
+	public $comments;
+	
+	
+    public static function tableName()
     {
         return 'requests';
     }
@@ -47,9 +57,10 @@ class Request extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Название заявки',
             'type' => 'Тип заявки',
-            'priority' => 'Приоритет заявки',
-            'description' => 'Описание заявки',
-            'client_email' => 'Ваш Email',
+            'priority' => 'Приоритет',
+            'description' => 'Описание',
+			'comments'   => 'Комментарии'
+            //'client_email' => 'Client Email',// ссылка на данные пользователя
         ];
     }
 
