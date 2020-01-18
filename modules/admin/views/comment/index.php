@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'text',
             'date',
-            'request_id',
+            'request_id', // Вместо id название заявки
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

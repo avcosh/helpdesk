@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Helper для того, чтобы в форме отображались названия типов заявок вместо цифр
+ */
 namespace app\helpers;
 
 use app\modules\admin\models\Request;

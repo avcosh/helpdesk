@@ -46,10 +46,10 @@ $this->params['breadcrumbs'][] = $this->title;
 			[
                 'attribute' => 'comments',
                 'format' => 'raw',
-                'value' => function ($id) {
+                'value' => function($searchModel) {
 					     return Html::a(
             'Перейти',
-            Url::to(['comment/view', 'id' => $id]),
+            Url::to(['list/index', 'id' => $searchModel->id])
             
         );
                        

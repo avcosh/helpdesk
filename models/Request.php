@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use Yii;
+//use Yii;
 
 /**
  * This is the model class for table "requests".
@@ -55,6 +55,7 @@ class Request extends \yii\db\ActiveRecord
 
     /**
      * @return \yii\db\ActiveQuery
+	 * Связь один-ко-многим с моделью Comment
      */
     public function getComment()
     {
@@ -63,6 +64,7 @@ class Request extends \yii\db\ActiveRecord
 
     /**
      * @return \yii\db\ActiveQuery
+	 * Связь один-к-одному с моделью Client
      */
     public function getClientEmail()
     {

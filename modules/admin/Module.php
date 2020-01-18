@@ -4,6 +4,7 @@ namespace app\modules\admin;
 use yii\filters\AccessControl;
 /**
  * admin module definition class
+ * Админская часть
  */
 class Module extends \yii\base\Module
 {

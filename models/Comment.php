@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use Yii;
+//use Yii;
 
 /**
  * This is the model class for table "comments".
@@ -53,6 +53,7 @@ class Comment extends \yii\db\ActiveRecord
 
     /**
      * @return \yii\db\ActiveQuery
+	 * Связь один-к-одному с моделью Request
      */
     public function getRequest()
     {

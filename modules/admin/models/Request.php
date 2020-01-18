@@ -2,7 +2,7 @@
 
 namespace app\modules\admin\models;
 use app\modules\admin\models\Comment;
-use Yii;
+//use Yii;
 
 /**
  * This is the model class for table "requests".
@@ -59,8 +59,8 @@ class Request extends \yii\db\ActiveRecord
             'type' => 'Тип заявки',
             'priority' => 'Приоритет',
             'description' => 'Описание',
-			'comments'   => 'Комментарии'
-            //'client_email' => 'Client Email',// ссылка на данные пользователя
+	        'comments'   => 'Комментарии к заявке'
+     
         ];
     }
 

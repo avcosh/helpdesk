@@ -53,6 +53,7 @@ class Client extends \yii\db\ActiveRecord
 
     /**
      * @return \yii\db\ActiveQuery
+	 * Связь один-ко-многим с моделью Request
      */
     public function getRequest()
     {
